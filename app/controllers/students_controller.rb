@@ -7,6 +7,11 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
+  respond_to do |format|
+    format.html {render 'shared/fancy_hello'}
+    format.xml{render xml: @student.to_xml}
+  end
+
   # GET /students/1
   # GET /students/1.json
   def show
