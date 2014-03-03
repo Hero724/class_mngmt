@@ -1,7 +1,9 @@
 ClassMngmt::Application.routes.draw do
   resources :students
 
-get 'courses/new', to: 'courses#new'
+get "courses/new"
+
+post "courses", to: 'courses#create'
 
 get 'happy', to: 'students#index'
 
