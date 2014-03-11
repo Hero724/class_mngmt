@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
   def new
   	@course = Course.new
+    render 'new', layout: 'bootstrap'
   end
 
   def create
@@ -9,7 +10,7 @@ class CoursesController < ApplicationController
   	if @course.save
   	redirect_to students_path
   else
-  	render :new, notice: "Course DIdn't Save!!"
+  	render :new, notice: "Course Didn't Save!!"
   end
 end
 end
